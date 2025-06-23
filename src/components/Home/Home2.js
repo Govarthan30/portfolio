@@ -1,12 +1,9 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
-import {
-  AiFillGithub,
-  AiFillInstagram,
-} from "react-icons/ai";
+import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+
 
 function Home2() {
   return (
@@ -18,35 +15,35 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-            📝 Self-motivated and curious learner pursuing B.Tech in Computer Science and Business Systems.
+              📝 Self-motivated and curious learner pursuing B.Tech in Computer
+              Science and Business Systems.
               <br />
-              <br />💻 Passionate about full-stack development, problem-solving, and emerging technologies.
+              <br />💻 Passionate about full-stack development, problem-solving,
+              and emerging technologies like{" "}
               <i>
-                <b className="purple"> C, python,Javascript, SQL and React-js </b>
-              </i>
-              <br />
-              <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
                 <b className="purple">
-                  Blockchain.
+                  C, Python, JavaScript, SQL and React.js
                 </b>
               </i>
               <br />
               <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
+              My field of interest includes building new &nbsp;
               <i>
-                <b className="purple"> modern JavaScript libraries and frameworks </b>
-              </i>
-              &nbsp; like
+                <b className="purple">Web Technologies and Products</b>
+              </i>{" "}
+              and exploring areas related to{" "}
               <i>
-                <b className="purple"> React.js and Next.js</b>
+                <b className="purple">Blockchain</b>
               </i>
-
-              &nbsp;.
+              .
+              <br />
+              <br />
+              Whenever possible, I apply my passion for developing products
+              using <b className="purple">Node.js</b> and
+              <i>
+                <b className="purple"> modern JavaScript libraries</b>
+              </i>{" "}
+              like <b className="purple">React.js and Next.js</b>.
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -55,15 +52,15 @@ function Home2() {
             </Tilt>
           </Col>
         </Row>
+
         <Row>
           <Col md={12} className="home-about-social">
-          <h1>CONTACT ME</h1>
+            <h1>CONTACT ME</h1>
             <p>
               📞 <b className="purple">8489515562</b> <br />
               📧 <b className="purple">231401030@rajalakshmi.edu.in</b>
             </p>
-            <span></span>
-            <span></span>
+
             <h1>FIND ME ON</h1>
             <p>
               Feel free to <span className="purple">connect </span>with me
@@ -74,7 +71,7 @@ function Home2() {
                   href="https://github.com/Govarthan30"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
@@ -84,7 +81,7 @@ function Home2() {
                   href="https://www.linkedin.com/in/govarthan-v/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -106,4 +103,5 @@ function Home2() {
     </Container>
   );
 }
+
 export default Home2;

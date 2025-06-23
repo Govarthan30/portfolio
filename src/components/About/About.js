@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Github from "./Github";
@@ -6,6 +5,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+import LeetCode from "./Leetcode";
 
 function About() {
   return (
@@ -46,6 +46,13 @@ function About() {
         <Toolstack />
 
         <Github />
+         {/* ✅ LeetCode Chart Section */}
+                <Row style={{ marginTop: "40px" }}>
+                  <Col md={12} className="home-about-social text-center">
+                    <h1>LEETCODE PROGRESS</h1>
+                    <LeetCode />
+                  </Col>
+                </Row>
       </Container>
     </Container>
   );
