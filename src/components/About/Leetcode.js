@@ -38,7 +38,7 @@ const LeetCode = ({ username = "Govarthan_30" }) => {
       } catch (err) {
         setError(err.message);
       } finally {
-        setTimeout(() => setLoading(false), 2000); // Delay to show animation
+        setTimeout(() => setLoading(false), 2000);
       }
     };
     fetchStats();
@@ -59,12 +59,12 @@ const LeetCode = ({ username = "Govarthan_30" }) => {
     if (!componentRef.current) return;
     const tiltElement = componentRef.current.firstChild;
     if (tiltElement) {
-      tiltElement.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
+      tiltElement.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg)";
     }
   };
 
   const renderLiquid = () => {
-    const { easySolved, mediumSolved, hardSolved, totalSolved } = stats;
+    const { mediumSolved, hardSolved, totalSolved } = stats;
     const total = totalSolved || 1;
     const h = (hardSolved / total) * 100;
     const m = ((mediumSolved + hardSolved) / total) * 100;
@@ -72,9 +72,9 @@ const LeetCode = ({ username = "Govarthan_30" }) => {
 
     return (
       <>
-        <div className="liquid-fill" style={{ background: 'var(--easy-color)', height: `${e - m}%`, animationDelay: '0s' }} />
-        <div className="liquid-fill" style={{ background: 'var(--medium-color)', height: `${m - h}%`, animationDelay: '0.5s' }} />
-        <div className="liquid-fill" style={{ background: 'var(--hard-color)', height: `${h}%`, animationDelay: '1s' }} />
+        <div className="liquid-fill" style={{ background: "var(--easy-color)", height: `${e - m}%`, animationDelay: "0s" }} />
+        <div className="liquid-fill" style={{ background: "var(--medium-color)", height: `${m - h}%`, animationDelay: "0.5s" }} />
+        <div className="liquid-fill" style={{ background: "var(--hard-color)", height: `${h}%`, animationDelay: "1s" }} />
       </>
     );
   };
@@ -83,7 +83,7 @@ const LeetCode = ({ username = "Govarthan_30" }) => {
     if (loading) {
       return (
         <div style={styles.centered}>
-          <div className="loader-name">{'🚀 My LeetCode Profile'}</div>
+          <div className="loader-name">🚀 My LeetCode Profile</div>
           <div className="loader-typing">Fetching LeetCode Data...</div>
         </div>
       );
@@ -105,7 +105,7 @@ const LeetCode = ({ username = "Govarthan_30" }) => {
         <div style={{ ...styles.tiltContainer, ...(isVisible ? styles.visible : styles.hidden) }}>
           <div style={styles.header}>
             <img src="https://assets.leetcode.com/static_assets/public/images/LeetCode_logo_rvs.png" alt="LeetCode" style={styles.logo} />
-            <span style={styles.username}>{'🚀 My LeetCode Profile'}</span>
+            <span style={styles.largeTitle}>🚀 My LeetCode Profile</span>
           </div>
 
           <div style={styles.orbContainer}>
@@ -113,7 +113,7 @@ const LeetCode = ({ username = "Govarthan_30" }) => {
               <div className="leet-liquid-stack">{isVisible && renderLiquid()}</div>
               <div style={styles.orbContent}>
                 <span style={styles.totalValue}><CountUp end={totalSolved} duration={2.5} separator="," /></span>
-                <span style={styles.totalLabel}>Problems Solved</span>
+                <span style={{ ...styles.totalLabel, color: "#9C27B0" }}>Problems Solved</span>
               </div>
             </div>
           </div>
@@ -174,26 +174,32 @@ const LeetCode = ({ username = "Govarthan_30" }) => {
         }
 
         .loader-name {
-          font-size: 28px;
-          font-weight: bold;
-          color: white;
+          font-size: 32px;
+          font-weight: 700;
+          color: #fff;
+          animation: pulse 1.5s infinite;
         }
 
         .loader-typing {
           color: #ccc;
-          margin-top: 10px;
+          margin-top: 12px;
           font-family: 'Courier New', monospace;
           animation: typing 3s steps(30, end) infinite;
           white-space: nowrap;
           overflow: hidden;
           border-right: 2px solid #fff;
-          width: 22ch;
+          width: 25ch;
         }
 
         @keyframes typing {
           0% { width: 0ch }
-          50% { width: 22ch }
+          50% { width: 25ch }
           100% { width: 0ch }
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(1.05); }
         }
       `}</style>
     </div>
@@ -229,11 +235,19 @@ const styles = {
   },
   header: {
     textAlign: 'center',
+    marginBottom: '20px',
+  },
+  logo: {
+    height: '24px',
+    opacity: 0.7,
     marginBottom: '10px',
   },
-  logo: { height: '24px', opacity: 0.7, marginBottom: '5px' },
-  username: { display: 'block', fontSize: '18px', fontWeight: 500, color: '#ddd' },
-
+  largeTitle: {
+    display: 'block',
+    fontSize: '26px',
+    fontWeight: 700,
+    color: '#eee',
+  },
   orbContainer: {
     display: 'flex',
     justifyContent: 'center',
@@ -241,8 +255,8 @@ const styles = {
   },
   orb: {
     position: 'relative',
-    width: '260px',
-    height: '260px',
+    width: '280px',
+    height: '280px',
     borderRadius: '50%',
     border: '2px solid rgba(255, 255, 255, 0.1)',
     background: 'rgba(13, 17, 23, 0.3)',
@@ -263,8 +277,8 @@ const styles = {
     color: '#fff',
     mixBlendMode: 'difference',
   },
-  totalValue: { fontSize: '56px', fontWeight: '700' },
-  totalLabel: { fontSize: '14px', letterSpacing: '1.5px', opacity: 0.9 },
+  totalValue: { fontSize: '64px', fontWeight: '800' },
+  totalLabel: { fontSize: '18px', letterSpacing: '1.5px', marginTop: '4px' },
 
   statsGrid: {
     display: 'flex',
@@ -276,14 +290,14 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '8px',
-    fontSize: '16px',
+    fontSize: '18px',
     fontWeight: 500,
     color: '#ccc',
   },
   dot: { width: '10px', height: '10px', borderRadius: '50%' },
   statValue: {
     marginLeft: 'auto',
-    fontSize: '18px',
+    fontSize: '20px',
     fontWeight: '700',
     color: '#fff',
   },
@@ -292,12 +306,18 @@ const styles = {
     marginTop: '25px',
     paddingTop: '20px',
     borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-    fontSize: '16px',
+    fontSize: '18px',
     fontWeight: 500,
     color: '#ccc',
   },
   rankValue: { color: '#FFD700', fontWeight: '700', marginLeft: '8px' },
-  centered: { width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' },
+  centered: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   errorText: { color: '#ff8a80', fontWeight: 'bold', fontSize: '18px' },
   errorSubText: { color: '#aaa', marginTop: '5px' },
 };
