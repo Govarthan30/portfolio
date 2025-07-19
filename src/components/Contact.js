@@ -28,6 +28,7 @@ function Contact() {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
+          time: new Date().toLocaleString(),
         },
         "K0JGZ18xPPyhnbwbC"
       )
