@@ -1,0 +1,184 @@
+.research-content {
+  position: relative;
+  z-index: 100;
+}
+
+/* Academic Profiles */
+
+.research-profiles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.research-profiles .btn {
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+
+.research-profiles .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(199, 112, 240, 0.5);
+}
+
+/* Research Interests */
+
+.research-interests {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.research-interests span {
+  background: rgba(199, 112, 240, 0.12);
+  border: 1px solid #c770f0;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.research-interests span:hover {
+  background: #c770f0;
+  transform: translateY(-3px);
+}
+
+/* Toggle */
+
+.research-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.research-toggle .btn {
+  min-width: 140px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+}
+
+.research-toggle .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Stats */
+
+.research-stats {
+  margin-bottom: 40px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+}
+
+.stat-box h2 {
+  color: #c770f0;
+  font-weight: bold;
+}
+
+.stat-box p {
+  color: white;
+  margin-bottom: 0;
+}
+
+/* Cards */
+
+.project-card-view {
+  transition: all 0.3s ease !important;
+}
+
+.project-card-view:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(199, 112, 240, 0.4);
+}
+
+.interest-chip {
+  background: rgba(199, 112, 240, 0.12);
+  border: 1px solid #c770f0;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.interest-chip:hover {
+  background: #c770f0;
+}
+
+.active-chip {
+  background: #c770f0;
+  box-shadow: 0 0 15px rgba(199,112,240,0.5);
+}
+
+.research-switch {
+  position: relative;
+  width: 220px;
+  height: 60px;
+}
+
+.research-switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  border-radius: 50px;
+  background: rgba(0, 30, 60, 0.4);
+  border: 1px solid #c770f0;
+  overflow: hidden;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  left: 5px;
+  top: 4px;
+  border-radius: 40px;
+  background: linear-gradient(
+    135deg,
+    #c770f0,
+    #8e44ad
+  );
+  transition: 0.4s;
+}
+
+.research-switch input:checked + .slider::before {
+  transform: translateX(108px);
+}
+
+.label-left,
+.label-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.label-left {
+  left: 25px;
+}
+
+.label-right {
+  right: 25px;
+}
